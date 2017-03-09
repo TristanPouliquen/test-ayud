@@ -1,0 +1,32 @@
+<%= form_for(class_session) do |f| %>
+  <% if class_session.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(class_session.errors.count, "error") %> prohibited this class_session from being saved:</h2>
+
+      <ul>
+      <% class_session.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :code %>
+    <%= f.text_field :code %>
+  </div>
+
+  <div class="field">
+    <%= f.label :student_id %>
+    <%= f.text_field :student_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
